@@ -1,0 +1,749 @@
+{
+    "PRODUCT_START": {
+        "states": [
+            "FULL_1",
+            "FULL_2"
+        ]
+    },
+    "PRODUCT_START.FULL_1": {
+        "switch": "!"
+    },
+    "PRODUCT_START.FULL_2": {
+        "switch": "!"
+    },
+    "PRODUCT_BEGIN": {
+        "switch": "!"
+    },
+    "GAME_HOME": {
+        "exitevent": "event_hide_custom"
+    },
+    "GAME_HOME.HOME": {
+        "banner": {
+            "switch": "zs_home_banner_show_switch",
+            "auto": true,
+            "checkInit": true
+        },
+        "event": {
+            "event_show_insertAd": [
+                "zs_full_screen_ad",
+                false
+            ],
+            "event_loadEnd_video": "zs_loading_video_switch",
+            "event_backhome_video": "zs_start_video_switch",
+            "event_show_custom": [
+                [
+                    {
+                        "switch": "zs_vertical_switch",
+                        "idKey": "zs_home_adunit",
+                        "centerX": 0,
+                        "top": 0,
+                        "width": 360
+                    },
+                    {
+                        "switch": "zs_single_grid_switch",
+                        "idKey": "zs_single_grid_adunit1",
+                        "left": 0,
+                        "top": 220
+                    },
+                    {
+                        "switch": "zs_single_grid_switch",
+                        "idKey": "zs_single_grid_adunit2",
+                        "right": 0,
+                        "top": 220
+                    },
+                    {
+                        "switch": "zs_vertical_switch",
+                        "idKey": "zs_vertical_adunit1",
+                        "left": 0,
+                        "top": 440
+                    },
+                    {
+                        "switch": "zs_vertical_switch",
+                        "idKey": "zs_vertical_adunit2",
+                        "right": 0,
+                        "top": 440
+                    }
+                ]
+            ]
+        },
+        "exitevent": {
+            "event_hide_custom": [
+                [
+                    "zs_vertical_adunit1",
+                    "zs_vertical_adunit2",
+                    "zs_side_bar_adunit"
+                ]
+            ]
+        }
+    },
+    "GAME_HOME.SHOP": {},
+    "PRODUCT_HOME_PLAY": {
+        "states": [
+            "VIDEO",
+            "EGG"
+        ]
+    },
+    "PRODUCT_HOME_PLAY.VIDEO": {
+        "switch": "zs_start_game_video_switch",
+        "event": "event_start_video"
+    },
+    "PRODUCT_HOME_PLAY.EGG": {
+        "check": {
+            "event_check_egg": true
+        },
+        "base": {
+            "type": "export_common_egg",
+            "window": {
+                "align": "topleft",
+                "fit": true,
+                "block": true
+            },
+            "base": {
+                "awardevent": null,
+                "closeevent": "event_childnext"
+            }
+        }
+    },
+    "GAME_PLAY": {
+        "states": [
+            "PLAY",
+            "EGG",
+            "SETTLE",
+            "OVER"
+        ]
+    },
+    "GAME_PLAY.NATIVE_1": {
+        "switch": "zs_full_screen_popup",
+        "event": {
+            "event_show_banner_flashing": "zs_banner_flashing",
+            "event_show_custom": [
+                [
+                    {
+                        "idKey": "zs_newly_adunit",
+                        "centerX": 0,
+                        "top": 200,
+                        "width": 330
+                    }
+                ]
+            ]
+        },
+        "base": [
+            {
+                "type": "export_background",
+                "window": {
+                    "align": "topleft",
+                    "fit": true,
+                    "block": true
+                },
+                "base": {
+                    "alpha": 1,
+                    "color": "#426d8c"
+                }
+            },
+            {
+                "type": "export_button",
+                "window": {
+                    "align": "bottom",
+                    "alignoffsety": -50
+                },
+                "base": {
+                    "switch": "zs_banner_vertical_enable",
+                    "clickignore": false,
+                    "firstclickignore": true,
+                    "width": 350,
+                    "height": 149,
+                    "fakeevent": {
+                        "event_show_banner": {
+                            "autoHide": true
+                        }
+                    },
+                    "fakedelay": 1000,
+                    "event": "event_childnext",
+                    "url": [
+                        "export/export",
+                        "btn_GoOn"
+                    ]
+                }
+            }
+        ],
+        "exitevent": "event_hide_custom"
+    },
+    "GAME_PLAY.NATIVE_2": {
+        "switch": "zs_full_screen_popup",
+        "event": {
+            "event_show_banner_flashing": "zs_banner_flashing",
+            "event_show_custom": [
+                [
+                    {
+                        "idKey": "zs_newly_adunit",
+                        "centerX": 0,
+                        "top": 200,
+                        "width": 330
+                    }
+                ]
+            ]
+        },
+        "base": [
+            {
+                "type": "export_background",
+                "window": {
+                    "align": "topleft",
+                    "fit": true,
+                    "block": true
+                },
+                "base": {
+                    "alpha": 1,
+                    "color": "#362625"
+                }
+            },
+            {
+                "type": "export_button",
+                "window": {
+                    "align": "bottom",
+                    "alignoffsety": -50
+                },
+                "base": {
+                    "switch": "zs_banner_vertical_enable",
+                    "clickignore": false,
+                    "firstclickignore": true,
+                    "width": 350,
+                    "height": 149,
+                    "fakeevent": {
+                        "event_show_banner": {
+                            "autoHide": true
+                        }
+                    },
+                    "fakedelay": 1000,
+                    "event": "event_childnext",
+                    "url": [
+                        "export/export",
+                        "btn_GoOn"
+                    ]
+                }
+            }
+        ],
+        "exitevent": "event_hide_custom"
+    },
+    "GAME_PLAY.NATIVE_3": {
+        "switch": "zs_full_screen_popup",
+        "event": {
+            "event_show_banner_flashing": "zs_banner_flashing",
+            "event_show_custom": [
+                [
+                    {
+                        "idKey": "zs_newly_adunit",
+                        "centerX": 0,
+                        "top": 200,
+                        "width": 330
+                    }
+                ]
+            ]
+        },
+        "base": [
+            {
+                "type": "export_background",
+                "window": {
+                    "align": "topleft",
+                    "fit": true,
+                    "block": true
+                },
+                "base": {
+                    "alpha": 1,
+                    "color": "#336b61"
+                }
+            },
+            {
+                "type": "export_button",
+                "window": {
+                    "align": "bottom",
+                    "alignoffsety": -50
+                },
+                "base": {
+                    "switch": "zs_banner_vertical_enable",
+                    "clickignore": false,
+                    "firstclickignore": true,
+                    "width": 350,
+                    "height": 149,
+                    "fakeevent": {
+                        "event_show_banner": {
+                            "autoHide": true
+                        }
+                    },
+                    "fakedelay": 1000,
+                    "event": "event_childnext",
+                    "url": [
+                        "export/export",
+                        "btn_GoOn"
+                    ]
+                }
+            }
+        ],
+        "exitevent": "event_hide_custom"
+    },
+    "GAME_PLAY.PLAY": {
+        "banner": {
+            "switch": "zs_game_banner_show_switch",
+            "checkInit": true
+        }
+    },
+    "GAME_PLAY.EGG": {
+        "base": {
+            "type": "export_settle_egg",
+            "window": {
+                "align": "topleft",
+                "fit": true,
+                "block": true
+            },
+            "base": {
+                "awardevent": null,
+                "closeevent": "event_childnext"
+            }
+        },
+        "exitevent": "event_hide_custom"
+    },
+    "GAME_PLAY.SETTLE": {
+        "switch": [
+            "zs_version",
+            "!zs_skip_settle"
+        ],
+        "event": {
+            "event_show_custom": [
+                [
+                    {
+                        "switch": "zs_side_bar_switch",
+                        "idKey": "zs_side_bar_adunit",
+                        "centerX": 0,
+                        "top": 200,
+                        "width": 330
+                    }
+                ]
+            ]
+        },
+        "exitevent": {
+            "event_hide_custom": [
+                [
+                    "zs_side_bar_adunit"
+                ]
+            ]
+        },
+        "base": [
+            {
+                "type": "export_background",
+                "window": {
+                    "align": "topleft",
+                    "fit": true,
+                    "block": true
+                },
+                "base": {
+                    "alpha": 1,
+                    "color": "#426d8c"
+                }
+            },
+            {
+                "type": "export_button",
+                "window": {
+                    "align": "bottom",
+                    "alignoffsety": -100
+                },
+                "base": {
+                    "width": 350,
+                    "height": 149,
+                    "event": "event_childnext",
+                    "url": [
+                        "export/export",
+                        "btn_GoOn"
+                    ]
+                }
+            }
+        ]
+    },
+    "GAME_PLAY.OVER": {
+        "banner": {},
+        "event": {
+            "event_show_custom": [
+                [
+                    {
+                        "switch": "zs_side_bar_switch",
+                        "idKey": "zs_finish_adunit",
+                        "centerX": 0,
+                        "top": 440,
+                        "width": 330
+                    }
+                ]
+            ]
+        },
+        "exitevent": {
+            "event_hide_custom": [
+                [
+                    "zs_finish_adunit"
+                ]
+            ]
+        }
+    },
+    "PRODUCT_PLAY_END": {
+        "states": [
+            "FULL_1",
+            "EGG",
+            "SETTLE_1",
+            "SETTLE_2",
+            "SETTLE_3",
+            "FULL_2"
+        ],
+        "exitevent": "event_hide_custom"
+    },
+    "PRODUCT_PLAY_END.EGG": {
+        "laterevent": "event_refresh_fakeMsg",
+        "check": {
+            "event_check_egg": false
+        },
+        "base": {
+            "type": "export_end_egg",
+            "window": {
+                "align": "topleft",
+                "fit": true,
+                "block": true
+            },
+            "base": {
+                "awardevent": null,
+                "closeevent": "event_childnext"
+            }
+        },
+        "exporter": [
+            {
+                "type": "export_list",
+                "switch": "zs_game_start_jump_switch",
+                "window": {
+                    "align": "topleft",
+                    "alignoffsety": 600
+                },
+                "base": {
+                    "item": "export_item_2",
+                    "mode": "side",
+                    "width": 350,
+                    "max": 1,
+                    "shaketime": 3000
+                }
+            },
+            {
+                "type": "export_list",
+                "switch": "zs_game_start_jump_switch",
+                "window": {
+                    "align": "topright",
+                    "alignoffsety": 600
+                },
+                "base": {
+                    "item": "export_item_2",
+                    "mode": "side",
+                    "width": 350,
+                    "max": 1,
+                    "shaketime": 3000
+                }
+            }
+        ]
+    },
+    "PRODUCT_PLAY_END.FULL_1": {
+        "laterevent": "event_refresh_fakeMsg",
+        "event": {
+            "event_show_insertAd": [
+                "zs_full_screen_ad",
+                true
+            ],
+            "event_auto_Video": "zs_before_full_screen_video1_switch"
+        },
+        "switch": "zs_full_screen1_jump",
+        "base": {
+            "type": "export_full_1",
+            "key": "full_1",
+            "window": {
+                "align": "topleft",
+                "fit": true,
+                "block": true
+            }
+        }
+    },
+    "PRODUCT_PLAY_END.FULL_2": {
+        "laterevent": "event_refresh_fakeMsg",
+        "event": {
+            "event_auto_Video": "zs_before_full_screen_video2_switch"
+        },
+        "switch": "zs_full_screen2_jump",
+        "base": {
+            "type": "export_full_2",
+            "key": "full_2",
+            "window": {
+                "align": "topleft",
+                "fit": true,
+                "block": true
+            }
+        }
+    },
+    "PRODUCT_PLAY_END.SETTLE_1": {
+        "switch": "zs_newly_switch1",
+        "event": {
+            "event_show_banner_flashing": "zs_banner_flashing",
+            "event_show_custom": [
+                [
+                    {
+                        "switch": [
+                            "zs_settle_last_start_switch",
+                            "zs_settle_last_start_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit",
+                        "centerX": 0,
+                        "top": 20,
+                        "width": 360
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_float_switch",
+                            "zs_settle_last_single_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit_single1",
+                        "left": 30,
+                        "top": 300
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_float_switch",
+                            "zs_settle_last_single_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit_single2",
+                        "right": 30,
+                        "top": 300
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_knock_switch",
+                            "zs_settle_last_knock_native_switch"
+                        ],
+                        "idKey": "zs_newly_adunit",
+                        "centerX": 0,
+                        "top": 400,
+                        "width": 330
+                    }
+                ]
+            ]
+        },
+        "exitevent": "event_hide_custom",
+        "base": [
+            {
+                "type": "export_background",
+                "window": {
+                    "align": "topleft",
+                    "fit": true,
+                    "block": true
+                },
+                "base": {
+                    "alpha": 1,
+                    "color": "#426d8c"
+                }
+            },
+            {
+                "type": "export_button",
+                "window": {
+                    "align": "bottom"
+                },
+                "base": {
+                    "switch": "zs_banner_vertical_enable",
+                    "clickignore": false,
+                    "firstclickignore": true,
+                    "width": 350,
+                    "height": 149,
+                    "fakedelay": 1000,
+                    "fakeevent": {},
+                    "event": "event_childnext",
+                    "url": [
+                        "export/export",
+                        "btn_GoOn"
+                    ]
+                }
+            }
+        ]
+    },
+    "PRODUCT_PLAY_END.SETTLE_2": {
+        "switch": "zs_newly_switch2",
+        "event": {
+            "event_show_banner_flashing": "zs_banner_flashing",
+            "event_show_custom": [
+                [
+                    {
+                        "switch": [
+                            "zs_settle_last_start_switch",
+                            "zs_settle_last_start_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit",
+                        "centerX": 0,
+                        "top": 20,
+                        "width": 360
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_float_switch",
+                            "zs_settle_last_single_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit_single1",
+                        "left": 30,
+                        "top": 300
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_float_switch",
+                            "zs_settle_last_single_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit_single2",
+                        "right": 30,
+                        "top": 300
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_knock_switch",
+                            "zs_settle_last_knock_native_switch"
+                        ],
+                        "idKey": "zs_newly_adunit",
+                        "centerX": 0,
+                        "top": 400,
+                        "width": 330
+                    }
+                ]
+            ]
+        },
+        "exitevent": "event_hide_custom",
+        "base": [
+            {
+                "type": "export_background",
+                "window": {
+                    "align": "topleft",
+                    "fit": true,
+                    "block": true
+                },
+                "base": {
+                    "alpha": 1,
+                    "color": "#362625"
+                }
+            },
+            {
+                "type": "export_button",
+                "window": {
+                    "align": "bottom"
+                },
+                "base": {
+                    "switch": "zs_banner_vertical_enable",
+                    "clickignore": false,
+                    "firstclickignore": true,
+                    "width": 350,
+                    "height": 149,
+                    "fakedelay": 1000,
+                    "fakeevent": {},
+                    "event": "event_childnext",
+                    "url": [
+                        "export/export",
+                        "btn_GoOn"
+                    ]
+                }
+            }
+        ]
+    },
+    "PRODUCT_PLAY_END.SETTLE_3": {
+        "switch": "zs_newly_switch3",
+        "event": {
+            "event_show_banner_flashing": "zs_banner_flashing",
+            "event_show_custom": [
+                [
+                    {
+                        "switch": [
+                            "zs_settle_last_start_switch",
+                            "zs_settle_last_start_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit",
+                        "centerX": 0,
+                        "top": 20,
+                        "width": 360
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_float_switch",
+                            "zs_settle_last_single_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit_single1",
+                        "left": 30,
+                        "top": 300
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_float_switch",
+                            "zs_settle_last_single_native_switch"
+                        ],
+                        "idKey": "zs_home_adunit_single2",
+                        "right": 30,
+                        "top": 300
+                    },
+                    {
+                        "switch": [
+                            "zs_settle_last_knock_switch",
+                            "zs_settle_last_knock_native_switch"
+                        ],
+                        "idKey": "zs_newly_adunit",
+                        "centerX": 0,
+                        "top": 400,
+                        "width": 330
+                    }
+                ]
+            ]
+        },
+        "exitevent": "event_hide_custom",
+        "base": [
+            {
+                "type": "export_background",
+                "window": {
+                    "align": "topleft",
+                    "fit": true,
+                    "block": true
+                },
+                "base": {
+                    "alpha": 1,
+                    "color": "#336b61"
+                }
+            },
+            {
+                "type": "export_button",
+                "window": {
+                    "align": "bottom"
+                },
+                "base": {
+                    "switch": "zs_banner_vertical_enable",
+                    "clickignore": false,
+                    "firstclickignore": true,
+                    "width": 350,
+                    "height": 149,
+                    "fakedelay": 1000,
+                    "fakeevent": {},
+                    "event": "event_childnext",
+                    "url": [
+                        "export/export",
+                        "btn_GoOn"
+                    ]
+                }
+            }
+        ]
+    },
+    "GAME_END": {
+        "banner": {
+            "checkInit": true
+        },
+        "switch": "zs_turntable_switch",
+        "base": {
+            "type": "export_turetable",
+            "window": {
+                "align": "topleft",
+                "fit": true,
+                "block": true
+            },
+            "base": {
+                "closeevent": "event_childnext"
+            }
+        }
+    },
+    "PRODUCT_FINISH": {
+        "switch": "!"
+    }
+}

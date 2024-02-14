@@ -1,0 +1,1 @@
+{"type":"FontClip","props":{"y":0,"x":0,"value":"+1","skin":"fnt/txt_dem.png","sheet":"-+0123456789","presetID":1,"name":"addLevel","isPresetRoot":true,"anchorY":1,"anchorX":0.5,"align":"center"},"compId":84,"child":[{"type":"Script","props":{"presetID":2,"runtime":"game/AddLevel.ts"},"compId":85}],"loadList":["fnt/txt_dem.png"],"loadList3D":[]}

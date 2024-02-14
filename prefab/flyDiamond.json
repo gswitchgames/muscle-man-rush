@@ -1,0 +1,1 @@
+{"type":"Image","props":{"skin":"result/dem_2.png","x":0,"y":0,"anchorX":0.5,"anchorY":0.5,"name":"flyDiamond","scaleX":0.5,"scaleY":0.5,"presetID":1,"isPresetRoot":true},"compId":79,"child":[{"type":"Script","props":{"presetID":2,"runtime":"view/FlyDiamond.ts"},"compId":80}],"loadList":["result/dem_2.png"],"loadList3D":[]}
